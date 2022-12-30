@@ -1,0 +1,7 @@
+{
+  "name": "ReEasy",
+  "displayName": "ReEasy",
+  "web": {
+    "build": {"babel": {"include": ["@ui-kitten/components"]}}
+  }
+}
