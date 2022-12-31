@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   infoContainer: {
-    width: '95%',
+    width: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
     flexDirection: 'row',

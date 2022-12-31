@@ -9,6 +9,7 @@ import {
 import {SafeAreaView} from 'react-native-safe-area-context';
 import tw from 'twrnc';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import NavigationControl from './NavigationControl';
 
 const AboutScreen = () => {
   return (
@@ -52,6 +53,9 @@ const AboutScreen = () => {
           </Text>
         </View>
       </ScrollView>
+      <View style={styles.control}>
+        <NavigationControl />
+      </View>
     </SafeAreaView>
   );
 };
@@ -79,6 +83,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: '600',
     marginLeft: 13,
+    color: '#000',
   },
   container: {
     padding: 22,
@@ -90,6 +95,7 @@ const styles = StyleSheet.create({
     fontSize: 19,
     textTransform: 'capitalize',
     marginVertical: 10,
+    color: '#000',
   },
   message: {
     lineHeight: 32,
@@ -97,6 +103,13 @@ const styles = StyleSheet.create({
     fontSize: 17,
     textTransform: 'capitalize',
     marginVertical: 10,
+    color: '#000',
+  },
+  control: {
+    marginTop: 'auto',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });
 

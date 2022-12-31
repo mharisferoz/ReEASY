@@ -11,6 +11,7 @@ import {
 import MapView, {Marker} from 'react-native-maps';
 // import {Geocoder} from 'react-native-geocoder-reborn';
 import tw from 'twrnc';
+import NavigationControl from './NavigationControl';
 // import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 
 const AddProperty = () => {
@@ -83,7 +84,8 @@ const AddProperty = () => {
               types: '(cities)',
             }}
             styles={{
-              textInputContainer: {...styles.input},
+              textInput
+              placeholderTextColor="#000"Container: {...styles.input},
               description: {
                 fontWeight: 'bold',
               },
@@ -129,7 +131,8 @@ const AddProperty = () => {
               types: '(cities)',
             }}
             styles={{
-              textInputContainer: {
+              textInput
+              placeholderTextColor="#000"Container: {
                 ...styles.input,
                 ...disabledInputStyle,
                 padding: 0,
@@ -160,6 +163,7 @@ const AddProperty = () => {
           /> */}
 
           <TextInput
+            placeholderTextColor="#000"
             disabled={isApprovalScreen}
             style={[styles.input, isApprovalScreen ? disabledInputStyle : {}]}
             value={city}
@@ -167,6 +171,7 @@ const AddProperty = () => {
             placeholder="City"
           />
           <TextInput
+            placeholderTextColor="#000"
             disabled={isApprovalScreen}
             style={[styles.input, isApprovalScreen ? disabledInputStyle : {}]}
             value={state}
@@ -174,6 +179,7 @@ const AddProperty = () => {
             placeholder="State"
           />
           <TextInput
+            placeholderTextColor="#000"
             disabled={isApprovalScreen}
             style={[styles.input, isApprovalScreen ? disabledInputStyle : {}]}
             value={zip}
@@ -183,6 +189,7 @@ const AddProperty = () => {
             keyboardType="number-pad"
           />
           <TextInput
+            placeholderTextColor="#000"
             style={[styles.input, isApprovalScreen ? disabledInputStyle : {}]}
             value={price}
             onChangeText={setPrice}
@@ -237,6 +244,7 @@ const AddProperty = () => {
             </View>
           </View>
           <TextInput
+            placeholderTextColor="#000"
             disabled={isApprovalScreen}
             style={[styles.input, isApprovalScreen ? disabledInputStyle : {}]}
             value={bedrooms}
@@ -245,6 +253,7 @@ const AddProperty = () => {
             keyboardType="number-pad"
           />
           <TextInput
+            placeholderTextColor="#000"
             disabled={isApprovalScreen}
             style={[styles.input, isApprovalScreen ? disabledInputStyle : {}]}
             value={bathrooms}
@@ -253,6 +262,7 @@ const AddProperty = () => {
             keyboardType="number-pad"
           />
           <TextInput
+            placeholderTextColor="#000"
             disabled={isApprovalScreen}
             style={[styles.input, isApprovalScreen ? disabledInputStyle : {}]}
             value={squareFeet}
@@ -302,6 +312,7 @@ const AddProperty = () => {
             </View>
           </View>
           <TextInput
+            placeholderTextColor="#000"
             disabled={isApprovalScreen}
             style={[styles.input, styles.descriptionInput]}
             value={description}
@@ -382,6 +393,9 @@ const AddProperty = () => {
           </View>
         </ScrollView>
       </View>
+      <View style={styles.control}>
+        <NavigationControl />
+      </View>
     </SafeAreaView>
   );
 };
@@ -408,6 +422,7 @@ const styles = {
     fontWeight: '600',
     textAlign: 'center',
     padding: 16,
+    color: '#000',
   },
   container: {
     padding: 16,
@@ -422,6 +437,7 @@ const styles = {
     marginBottom: 16,
     fontSize: 16,
     borderRadius: 12,
+    color: '#000',
   },
   homeTypeContainer: {
     marginBottom: 16,
@@ -430,6 +446,7 @@ const styles = {
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 8,
+    color: '#000',
   },
   homeTypeOptions: {
     flexDirection: 'row',
@@ -457,6 +474,7 @@ const styles = {
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 8,
+    color: '#000',
   },
   amenitiesOptions: {
     flexDirection: 'row',
@@ -473,6 +491,7 @@ const styles = {
   },
   descriptionInput: {
     height: 128,
+    color: '#000',
   },
   picturesContainer: {
     marginBottom: 16,
@@ -525,6 +544,7 @@ const styles = {
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 8,
+    color: '#000',
   },
   map: {
     width: '100%',
@@ -562,6 +582,13 @@ const styles = {
   },
   buttons: {
     margin: 0,
+  },
+  control: {
+    backgroundColor: '#fff',
+    marginTop: 'auto',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 };
 

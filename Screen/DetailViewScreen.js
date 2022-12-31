@@ -3,6 +3,7 @@ import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import tw from 'twrnc';
+import NavigationControl from './NavigationControl';
 
 const DetailViewScreen = () => {
   const [currentImage, setCurrentImage] = React.useState(
@@ -41,31 +42,30 @@ const DetailViewScreen = () => {
         </View>
       </View>
 
-      <View style={{marginTop: 50, paddingHorizontal: 20}}>
+      <View style={{marginTop: 50, paddingHorizontal: 20, paddingBottom: 100}}>
         <ScrollView scrollEnabled={true} showsVerticalScrollIndicator={false}>
-          <View>
-            <Text style={styles.title}>Gallery</Text>
-            <ScrollView
-              scrollEnabled={true}
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}>
-              <View style={styles.gallery}>
-                {galleryImagesUrl.map((image, i) => (
-                  <TouchableOpacity
+          <Text style={styles.title}>Gallery</Text>
+          <ScrollView
+            scrollEnabled={true}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}>
+            <View style={styles.gallery}>
+              {galleryImagesUrl.map((image, i) => (
+                <TouchableOpacity
+                  key={i}
+                  onPress={() => {
+                    setCurrentImage(image.url);
+                  }}>
+                  <Image
+                    style={styles.galleryImage}
                     key={i}
-                    onPress={() => {
-                      setCurrentImage(image.url);
-                    }}>
-                    <Image
-                      style={styles.galleryImage}
-                      key={i}
-                      source={image.url}
-                    />
-                  </TouchableOpacity>
-                ))}
-              </View>
-            </ScrollView>
-          </View>
+                    source={image.url}
+                  />
+                </TouchableOpacity>
+              ))}
+            </View>
+          </ScrollView>
+
           <View style={{marginTop: 20, paddingBottom: 300}}>
             <Text style={styles.title}>Description</Text>
             <View style={{marginTop: 20}}>
@@ -96,6 +96,9 @@ const DetailViewScreen = () => {
             </View>
           </View>
         </ScrollView>
+      </View>
+      <View style={styles.control}>
+        <NavigationControl />
       </View>
     </SafeAreaView>
   );
@@ -152,6 +155,13 @@ const styles = StyleSheet.create({
     color: '#000000a3',
     fontSize: 18,
     lineHeight: 35,
+  },
+  control: {
+    backgroundColor: '#fff',
+    marginTop: 'auto',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });
 

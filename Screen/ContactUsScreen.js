@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import tw from 'twrnc';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import NavigationControl from './NavigationControl';
 
 const ContactScreen = () => {
   const [name, setName] = React.useState('');
@@ -97,6 +97,9 @@ const ContactScreen = () => {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      <View style={styles.control}>
+        <NavigationControl />
+      </View>
     </SafeAreaView>
   );
 };
@@ -124,6 +127,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: '600',
     marginLeft: 13,
+    color: '#000',
   },
   inputContainer: {
     padding: 20,
@@ -169,6 +173,12 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  control: {
+    marginTop: 'auto',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });
 

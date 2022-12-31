@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   StyleSheet,
@@ -8,10 +8,22 @@ import {
   Alert,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import NavigationControl from '../NavigationControl';
+import {useSelector} from 'react-redux';
+import {selectNaviagtion} from '../../slices/navSlice';
 
 const SettingsScreen = () => {
+  const navigation = useSelector(selectNaviagtion);
+  useEffect(() => {
+    if (!navigation) return;
+    console.log('navigation 1=> ', navigation);
+  }, [navigation]);
+
   return (
     <SafeAreaView>
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>Settings</Text>
+      </View>
       <View
         style={{
           backgroundColor: '#fff',
@@ -19,15 +31,21 @@ const SettingsScreen = () => {
           height: '100%',
           flexDirection: 'column',
         }}>
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Contact')}
+          style={styles.card}>
           <Text style={styles.title}>Contact Us</Text>
           <Icon name="phone" size={30} color="#000" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Faq')}
+          style={styles.card}>
           <Text style={styles.title}>FAQs</Text>
           <Icon name="question-circle" size={30} color="#000" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.card}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('About')}
+          style={styles.card}>
           <Text style={styles.title}>About Us</Text>
           <Icon name="info-circle" size={30} color="#000" />
         </TouchableOpacity>
@@ -47,7 +65,7 @@ const SettingsScreen = () => {
                 {
                   text: 'Confirm',
                   onPress: () => {
-                    props.navigation.replace('Auth');
+                    navigation.navigate('Auth');
                   },
                 },
               ],
@@ -58,11 +76,37 @@ const SettingsScreen = () => {
           <Icon name="power-off" size={30} color="#000" />
         </TouchableOpacity>
       </View>
+      <View style={styles.control}>
+        <NavigationControl />
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  header: {
+    width: '100%',
+    padding: 13,
+    backgroundColor: '#fff',
+    borderBottomColor: '#bdbdbd',
+    borderBottomWidth: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
+  },
+  headerTitle: {
+    fontSize: 25,
+    fontWeight: '600',
+    marginLeft: 13,
+    color: '#000',
+  },
   card: {
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -88,6 +132,15 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     fontSize: 20,
     fontWeight: '500',
+    color: '#000',
+  },
+  control: {
+    zIndex: 99999,
+    backgroundColor: '#fff',
+    marginTop: 'auto',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });
 

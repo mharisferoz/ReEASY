@@ -10,6 +10,7 @@ import {
 import tw from 'twrnc';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import {ScrollView} from 'react-native-gesture-handler';
+import NavigationControl from '../NavigationControl';
 
 const FaqComponent = ({faq}) => {
   const [isExpanded, setIsExpanded] = React.useState(false);
@@ -79,6 +80,9 @@ const FaqScreen = () => {
           ))}
         </View>
       </ScrollView>
+      <View style={styles.control}>
+        <NavigationControl />
+      </View>
     </SafeAreaView>
   );
 };
@@ -105,6 +109,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 25,
     fontWeight: '600',
+    color: '#000',
   },
 
   faqContainer: {
@@ -121,7 +126,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
-
+    marginBottom: 10,
     elevation: 3,
   },
   container: {
@@ -138,6 +143,7 @@ const styles = StyleSheet.create({
     lineHeight: 25,
     fontWeight: '500',
     fontSize: 17,
+    color: '#000',
   },
   answer: {
     marginTop: 10,
@@ -145,6 +151,14 @@ const styles = StyleSheet.create({
     lineHeight: 30,
     fontWeight: '400',
     fontSize: 16,
+    color: '#000',
+  },
+  control: {
+    padding: 10,
+    marginTop: 'auto',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });
 

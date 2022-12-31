@@ -11,23 +11,20 @@ const NavigationControl = () => {
     if (!navigation) return;
     console.log('navigation 1=> ', navigation);
   }, [navigation]);
-  const goto = () => {
-    console.log('navigation 2=> ', navigation);
-  };
+
   return (
     <View style={styles.control}>
-      <TouchableOpacity
-        onPress={() => navigation.navigate('ProfleScreenStack')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <Icon name="home" size={30} color="#fff" />
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={goto}>
+      <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
         <Icon name="user" size={30} color="#fff" />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
         <Icon name="bell" size={30} color="#fff" />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
         <Icon name="cog" size={30} color="#fff" />
       </TouchableOpacity>
       <TouchableOpacity
@@ -46,7 +43,7 @@ const NavigationControl = () => {
                 text: 'Confirm',
                 onPress: () => {
                   AsyncStorage.clear();
-                  props.navigation.replace('Auth');
+                  navigation.navigate('Auth');
                 },
               },
             ],
@@ -68,6 +65,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     borderRadius: 30,
+    marginBottom: 10,
   },
   icon: {
     width: 32,

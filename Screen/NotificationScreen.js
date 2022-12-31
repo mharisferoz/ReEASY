@@ -9,6 +9,7 @@ import {
 import {SafeAreaView} from 'react-native-safe-area-context';
 import tw from 'twrnc';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import NavigationControl from './NavigationControl';
 
 const NotificationScreen = () => {
   return (
@@ -199,6 +200,10 @@ const NotificationScreen = () => {
           </View>
         </View>
       </ScrollView>
+      <View
+        style={{marginLeft: 'auto', marginRight: 'auto', paddingVertical: 20}}>
+        <NavigationControl />
+      </View>
     </SafeAreaView>
   );
 };
@@ -219,13 +224,13 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
-
     elevation: 3,
   },
   headerTitle: {
     fontSize: 25,
     fontWeight: '600',
     marginLeft: 13,
+    color: '#000',
   },
   circleContainer: {
     paddingTop: 10,
@@ -256,12 +261,14 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginHorizontal: 3,
     lineHeight: 25,
+    color: '#000',
   },
   message: {
     fontSize: 16,
     fontWeight: '500',
     marginHorizontal: 3,
     lineHeight: 25,
+    color: '#000',
   },
   time: {
     fontSize: 13,
