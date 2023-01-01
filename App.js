@@ -72,21 +72,6 @@ const Auth = () => {
           },
         }}
       />
-      <Stack.Screen name="profile" component={ProfileScreen} />
-      <Stack.Screen
-        name="navigation"
-        component={NavigationControl}
-        options={{
-          title: 'navigation', //Set Header Title
-          headerStyle: {
-            backgroundColor: '#307ecc', //Set Header color
-          },
-          headerTintColor: '#fff', //Set Header text color
-          headerTitleStyle: {
-            fontWeight: 'bold', //Set Header text style
-          },
-        }}
-      />
     </Stack.Navigator>
   );
 };

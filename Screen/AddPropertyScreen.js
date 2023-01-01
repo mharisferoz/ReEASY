@@ -407,22 +407,16 @@ const disabledInputStyle = {
 
 const styles = {
   header: {
-    backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
+    width: '100%',
+    padding: 12,
+    backgroundColor: '#307ecc',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   headerTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    textAlign: 'center',
-    padding: 16,
-    color: '#000',
+    fontSize: 21,
+    fontWeight: '700',
+    color: '#fff',
   },
   container: {
     padding: 16,

@@ -229,26 +229,15 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   header: {
     width: '100%',
-    padding: 15,
-    backgroundColor: '#fff',
-    borderBottomColor: '#bdbdbd',
-    borderBottomWidth: 1,
+    padding: 12,
+    backgroundColor: '#307ecc',
     flexDirection: 'row',
     justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
   },
   headerTitle: {
-    fontSize: 25,
+    fontSize: 21,
     fontWeight: '700',
-    marginLeft: 13,
-    color: '#000',
+    color: '#fff',
   },
   switch: {
     marginVertical: 10,

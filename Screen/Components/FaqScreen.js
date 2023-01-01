@@ -90,28 +90,16 @@ const FaqScreen = () => {
 const styles = StyleSheet.create({
   header: {
     width: '100%',
-    padding: 13,
-    backgroundColor: '#fff',
-    borderBottomColor: '#bdbdbd',
-    borderBottomWidth: 1,
+    padding: 12,
+    backgroundColor: '#307ecc',
     flexDirection: 'row',
     justifyContent: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-
-    elevation: 3,
   },
   headerTitle: {
-    fontSize: 25,
-    fontWeight: '600',
-    color: '#000',
+    fontSize: 21,
+    fontWeight: '700',
+    color: '#fff',
   },
-
   faqContainer: {
     width: '90%',
     marginTop: 20,
