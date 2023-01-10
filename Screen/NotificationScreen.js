@@ -23,7 +23,7 @@ const NotificationScreen = () => {
             flexDirection: 'row',
             alignItems: 'center',
           }}>
-          <Icon name="check" size={15} color="#fff" />
+          <Icon name="check" size={15} color="#fff~" />
           <Text style={{color: '#fff', marginLeft: 5, fontWeight: '600'}}>
             Mark as Read
           </Text>
